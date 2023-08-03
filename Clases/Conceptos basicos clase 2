@@ -1,0 +1,43 @@
+q="abscdefba";print(q[1:-2]);print("sdf");print(q.replace("ab","*"))
+s="""ti""";print(s.startswith("ti"))
+sequence=">MAnlFKLgaENIFLGrKW";s1=sequence.lstrip(">");s2=s1.rstrip(" ");s3=s2.upper();print(s3)
+
+
+
+
+
+import re #expresion regular
+expresion="la temperatura"
+busqueda=r"la te"
+obtenido=re.findall(busqueda,expresion)
+print(obtenido)
+
+
+lista=[1,2,3,4,5,[10,11,12,13]]
+print(lista[1:4])
+print(10 in lista[5]) #si se cambia de orden la sublista es diferente
+
+
+#Ejercicios propuestos
+chain_a = """SSSVPSQKTYQGSYGFRLGFLHSGTAKSVTCTYSPALNKM
+FCQLAKTCPVQLWVDSTPPPGTRVRAMAIYKQSQHMTEVV
+RRCPHHERCSDSDGLAPPQHLIRVEGNLRVEYLDDRNTFR
+HSVVVPYEPPEVGSDCTTIHYNYMCNSSCMGGMNRRPILT
+IITLEDSSGNLLGRNSFEVRVCACPGRDRRTEEENLRKKG
+EPHHELPPGSTKRALPNNT"""
+#si comparo con un is 2 listas saldra que es falso pork no seran lo mismo ya que salen de direcciones distintas o tienen referencias distintas
+#igualdad es cuando tienen valores similares e identico cuando salen de la misma referencia||
+
+
+import numpy as np
+matriz=np.zeros((2,3))
+print(matriz)
+
+
+
+#diccionarios
+code={}
+code["UUU"]="A" #METODOS, KEYS QUE ENTREGA CLAVES DESORDENADAS
+#LA CLAVE ES UUU
+#DICT.KEYS,  DICT.VALUES. , DIC.ITEMS
+print(code)

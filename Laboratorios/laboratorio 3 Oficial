@@ -1,0 +1,9 @@
+arch=open("UNI_CORR_500_01.txt","r")
+id=[];frame=[];x=[];y=[];z=[];conta=0
+for line in arch.readlines():
+    separacion=line.split("\t"); conta+=1
+    if conta>=5:
+      var=separacion[4].split("\n")
+      id.append(separacion[0]); frame.append(separacion[1]); x.append(separacion[2]); y.append(separacion[3]); z.append(var[0])
+arch.close()
+#print(len(x)," ", len(y)," ",len(z))

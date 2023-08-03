@@ -1,0 +1,17 @@
+#a1=a2=1
+#ai=ai-1+ai-2
+arch=open("lista_fibonacci.txt","w")
+lista_fibonacci=[1,1]
+print(lista_fibonacci[len(lista_fibonacci)-1]+lista_fibonacci[len(lista_fibonacci)-2],file=arch)
+while len(lista_fibonacci)<100:
+    lista_fibonacci.append(lista_fibonacci[len(lista_fibonacci)-1]+lista_fibonacci[len(lista_fibonacci)-2])
+    print(lista_fibonacci[len(lista_fibonacci)-1]+lista_fibonacci[len(lista_fibonacci)-2],file=arch)
+print("\n",lista_fibonacci,"\n")
+arch.close
+q="abscdefba"
+print(q[1:-2])
+print("sdf")
+print(q.replace("ab","*"))
+s="""ti"""
+print(s.startswith("ti"))
+were
