@@ -7,10 +7,20 @@ while materia.upper() !="FIN":
     Materia_solicitada.append(materia)
     materia=str(input("Ingrese una materia: "))
 print("---------------------------------------------------------------------------")
-Porcentajes=[]
+Porcentajes=[];suma=0
 for i in Materia_solicitada:
     Porcentaje=int(input("Ingrese un porcentaje para la evaluacion de "+str(i)+" "))
-    Porcentajes.append(Porcentaje)
+    Porcentajes.append(Porcentaje/100)
+    suma+=Porcentaje
+while suma!=100 :
+    suma=0
+    print("porcentajes no validos")
+    for i in Materia_solicitada:
+        Porcentaje=int(input("Ingrese un porcentaje para la evaluacion de "+str(i)+" "))
+        Porcentajes.append(Porcentaje/100)
+        suma+=Porcentaje
+    
+
 print("---------------------------------------------------------------------------")
 nombre=str(input("Ingrese un nombre de alumno: "))
 nombres=[]
@@ -48,9 +58,11 @@ for i in range(len(Materia_solicitada)):
     for k in range(len(nombres)):
         if matriz[i,k]==notamax:
             print("La mejora nota corresponde a la materia de ",str(Materia_solicitada[i])," de ",str(nombres[k]),"con un "+str(notamax))
-bestprom=0
+lista_prom=[]
+print("---------------------------------------------------------------------------")
 for i in range(len(nombres)):
+    lista_prom.append(0)
     for j in range(len(Materia_solicitada)):
-        
-        
-print("El mejor promedio corresponde a :",bestprom," que es de ",al)
+        lista_prom[i]+=matriz[j,i]*Porcentajes[j]
+
+print("El menor promedio corresponde a :",min(lista_prom)," es de ",nombres[lista_prom.index(min(lista_prom))])

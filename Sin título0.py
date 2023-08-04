@@ -1,3 +1,10 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Fri Aug  4 13:50:35 2023
+
+@author: Bruno
+"""
+
 def frecuencia(diccionario,COORDENADAS):  
    for i in range(len(COORDENADAS)):
       diccionario[COORDENADAS[i]]+=1
@@ -37,52 +44,47 @@ def Crear_matrices (diccionario,diccionario2):
    return matriz
 
 def transformacion (x,y):
-   ly=[]
-   lx=[]
-   for i in range(len(x)):
-      lx.append((float(x[i])*35.6)+320)
-      ly.append((-96)*(float(x[i]))+480)
-   return lx,ly
+    uniones=[]
+    diccionario_uniones={}
+    ly=[]
+    lx=[]
+    
+    for i in range(len(x)):
+        
+        pixely=round(((-96)*float(y[i]))+480);   pixelx=round(float((float(x[i])*35.6)+320))
+        
+        string=str(pixelx)+"-"+str(pixely)
+        lx.append(pixelx)
+        ly.append(pixely)
+        uniones.append(string)
+        
+    for  i in uniones:
+        
+        diccionario_uniones[i]+=1
+        
+    return recorrer(diccionario_uniones),lx,ly
 
 pixeles=transformacion(x,y)
-pixelesy=pixeles[1]
-pixelesx=pixeles[0]
-Matrix=np.zeros((641,481)) #x,y
-
-for i in range(len(pixelesx)):
-   fila=int(round(pixelesx[i],0)-1)
-   columna=int(round(pixelesy[i],0)-1)
-   if columna>480:
-      columna=480
-   if fila>640:
-      fila=640
-   Matrix[fila][columna]+=1
-print(Matrix)
+pixelesy=pixeles[2]
+pixelesx=pixeles[1]
+matriz_frecuencias=pixeles[0]
 
 
-
-
-
-
-
-
-"""
-
-
-maximo  = max(diccionario_x_e_Y.values())
+def recorrer  (diccionario_uniones):
+    Matrix=np.zeros((641,481)) #x,y
+    for llave,valor in diccionario_uniones.items():
+        keys=llave.split("-")
+        fila_X=(int(keys[0]))
+        Col_y=(int(keys[1]))
+        if fila_X>480:
+            Col_y=480
+        if Col_y>640:
+            fila_X=640
+        Matrix[fila_X][Col_y]=valor
+    return Matrix
 
 import matplotlib.pyplot as plt
-lista=[i for i in diccionario_x_e_Y.keys() if diccionario_x_e_Y[i]== maximo]
-matriz=np.zeros((len(lista),2))
-for i in range(len(lista)):
-   matriz[i,0]=lista[i].split(",")[0]
-   matriz[i,1]=lista[i].split(",")[1]
-plt.plot([i.split(",")[0] for i in lista],[i.split(",")[1] for i in lista])
-plt.xlabel("Eje x")
-plt.ylabel("Eje y")
-plt.title('Gráfico de línea')
-plt.show()
 
-plt.imshow(matriz, cmap='hot', interpolation='nearest')
+plt.imshow(matriz_frecuencias, cmap='hot', interpolation='nearest')
 plt.colorbar()
-plt.show()"""
+plt.show()
