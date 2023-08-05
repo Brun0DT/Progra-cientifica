@@ -1,7 +1,5 @@
 ![Logo UCN](images/60x60-ucn-negro.png)
 # Laboratorio 01: Cálculo de frecuencia peatonal 
-
-
 ## 1. Introducción 
 <div style="text-align: justify;">
 El problema se enmarca en un interesante experimento que busca analizar cómo la densidad de personas y el ancho de las puertas afectan el tiempo de evacuación en un corredor con dos accesos, correspondientes a puerta 1 y puerta 2. 
@@ -74,7 +72,7 @@ Por otro lado la representacion grafica de el espacio existente para el paso pea
 <center>
 <img src="images/Dimensiones.jpeg" width="400">
 
-ilustracion 1: Dimensiones paso peatonal
+*Ilustracion 1: Dimensiones paso peatonal*
 </center>
 Para el procedimiento de este laboratorio se realizarán varias etapas cruciales. En primer lugar, emplearemos la plataforma Visual Studio Code junto con el lenguaje de programación Python para cargar el archivo "UNI_CORR_500_01.txt". Una vez completado el proceso de carga extraeremos las coordenadas X e Y del conjunto de datos y las almacenaremos en estructuras de listas de Python, lo que simplificará su manipulación y análisis subsiguiente. A continuación, procederemos al análisis de frecuencia para determinar qué conjuntos de coordenadas X, Y y (X, Y) se repiten con mayor frecuencia, lo que permitirá identificar patrones significativos de concentración de personas en el entorno observado. A continuación, se realizará la conversión de las coordenadas de metros a pixeles, lo cual nos brindará una representación más precisa de la distribución espacial. Posteriormente, emplearemos estos datos transformados en una matriz la cual será utilizada para generar un mapa de calor, visualizando claramente las zonas de mayor afluencia de personas. Este mapa de calor será una herramienta valiosa para comprender de manera intuitiva los patrones de movimiento y concentración en el entorno monitoreado, lo que proporcionará información clave para la toma de decisiones en la planificación urbana y la optimización de la movilidad peatonal. En resumen, este laboratorio fusiona el poder de la programación científica con la visualización de datos para obtener conocimientos profundos sobre la frecuencia peatonal y su distribución en un entorno específico.
 En resumen, la secuencia de pasos sería la siguiente:
@@ -100,7 +98,7 @@ En la tala a continuacion se puede observar como el primero archivo "Codigo 1.py
 | Programa Uno (Codigo 1.py) |        255.5286            |           31.777        |
 | Programa Dos (Codigo 2.py) |        303.28607           |           44.515        |
 
-Tabla 1: Tiempos de ejecucion
+*Tabla 1: Tiempos de ejecucion*
 </center>
 
 Por otro lado en cuanto a los resultados obtenidos, se puede concluir que se logro responder a lo solicitado, logrando obtener las coordenadas X, y e (X,y) mas repetidas en la base de datos en medida de metros.
@@ -115,14 +113,14 @@ Coordenadas | Promedio |  Varianza |
 | X |   -0.528            |           8.291        |
 | Y |          2.552         |           1.316        |
 
-Tabla 2: Promedio y varianza
+*Tabla 2: Promedio y varianza*
 </center>
 
 En cuanto a la matriz de frecuencias, como se evidencia a continuacion, representa la cantidad de ocaciones donde una coordenada x e y fue intersectada por algun usuario donde la fila corresponde al eje x y la columna al eje Y, por ejemplo en el punto (147,226) se encontro que 2 personas transitaron por este misma ubicacion, esto permite obtener las zonas criticas, de el paso peatonal.
 <center>
 <img src="images/Matriz-frecuencias2.png" width="400">
 
-ilustracion 2: Matriz de frecuencias
+*Ilustracion 2: Matriz de frecuencias*
 </center>
 
 Un mapa de calor es una representación gráfica que nos permite visualizar la distribución espacial de un fenómeno o variable en un área determinada. En este contexto, si consideramos el comportamiento de las personas al transitar por un pasillo, un mapa de calor revelaría cómo se distribuyen las frecuencias de tránsito a lo largo de dicho pasillo.
@@ -139,8 +137,9 @@ Por otro lado, también se puede observar cómo los datos se muestrean únicamen
 
 <img src="images/Mapa_de_calor.png" width="400">
 
-ilustracion 3: Mapa de calor
+*Ilustracion 3: Mapa de calor*
 </center>
+
 ## 5. Conclusiones
 
 Basándonos en los resultados obtenidos, es posible extraer valiosas inferencias que contribuyen al conocimiento. Por ejemplo, al emplear un bucle 'for' para buscar el valor máximo justo antes de un comando 'print', se identifica una desaceleración en la ejecución del código. En contraste, la realización de la búsqueda del valor máximo con antelación al comando 'print' demuestra ser más óptima en términos de tiempo de ejecución.
@@ -151,6 +150,7 @@ Por otro lado tambien se logra identificar que la creacion de variables adiciona
 Finalmente podemos concluir que se lograros los objetivos especificos y generales, debido a que se pude extraer la informacion del archivo entregado, logrando representar los puntos criticos mas utilizados por los peatones, pudiendo representar esto en la matriz de frecuencias para lograr obtener un mapa de calor, que nos muestre visualmente como se distribuyen estos puntos criticos, a lo largo del pasillo.
 
 
-
+## 6. Referencias
+OpenAI. (2021). GPT-3.5 [Modelo de lenguaje AI]. Recuperado de https://openai.com/gpt-3.5
 
 </div>
