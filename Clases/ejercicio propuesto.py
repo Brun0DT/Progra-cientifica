@@ -66,6 +66,8 @@ for i in range(len(L)):
              Cadena+= str(valores[llave.index(L[i].lower())])
 print(Cadena+"\"")
 
+L=[translation_of[valor.lower()] for valor in L if valor.lower() in translation_of]
+
 """en la cadena:
 "ade tym tym ade gua tym cyt"""
 
@@ -193,3 +195,12 @@ fig, ax=plt.subplots()
 x,y= np.random.multivariate_normal(mean=[0.0,0.0], cov=[[1.0,0.4],[0.4,0.5]], size=1000).T
 ax.hist2d(x,y)
 plt.show()
+f1=open("aa.txt","w")
+f1.write("aa")
+f2=open("aa.txt","w")
+f2.write("bb")
+f1.close() #en este caso el que se cierra primero se escribe primero3
+f2.close() #como se cierra despues, se guarda por encima del que ya se escribio
+
+
+lista=[1,2,3,4,5,6,7]

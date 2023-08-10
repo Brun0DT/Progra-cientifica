@@ -83,7 +83,8 @@ pixeles=transformacion(x,y) #esta funcion retorna una matriz creada en la funcio
 matriz_frecuencias=pixeles
 
 #obtenicion de matriz de calor, el eje x corresponde al largo del pasillo, el y al ancho
-fig, ax=plt.subplots()
+fig, ax=plt.subplots()#en el parentesis del subplot se le debe indicar las filas y columna(fila,columa,fila donde se pondra un grafico)
+
 ax.imshow(matriz_frecuencias,cmap="hot")
 fin_memoria = psutil.virtual_memory().used
 fin_tiempo = time.time()

@@ -16,7 +16,7 @@ import random
 a=[random.randint(1,10) for _ in range(10)] # el _ se usa para descartar ya que no buscamos agregar valores a una lista
 print(a)
 
-
+#diccionario={zz:a.count(zz) for zz in range(1,11)}   # asi se hace todo sin utilizar un ciclo for gigante 
 diccionario={}
 print("           ")
 a=[random.randint(1,10) for _ in range(100)]; lista=[]; numero=[a for a in range(1,11)]
@@ -37,18 +37,27 @@ print("El numero que mas veces se repite corresponde a: ",[i for i in range(1,11
 
 import matplotlib.pyplot as plt
 
-fig, ax=plt.subplots()
-ax.bar([i for i in numero ],[val for i, val in diccionario.items()])
-plt.show()
+#fig, ax=plt.subplots()
+#ax.bar([i for i in numero ],[val for i, val in diccionario.items()])
+#plt.show()
 
 """fig, ax=plt.subplots()
 ax.boxplot([i for i, val in diccionario.items()])
 plt.show()"""
 
-fig, ax=plt.subplots()
-ax.boxplot([i for i in a])
-plt.show()
+#fig, ax=plt.subplots()
+#ax.boxplot([i for i in a])
+#plt.show()
 
-fig, ax=plt.subplots()
-ax.violinplot([i for i in a])
+#fig, ax=plt.subplots()
+#ax.violinplot([i for i in a])
+#plt.show()
+
+fig, ax = plt.subplots(2, 2, sharey=False)
+ax[0, 0].bar([i for i in numero ],[val for i, val in diccionario.items()], color = 'fireBrick')
+ax[0, 1].boxplot([i for i in a])
+ax[1, 1].violinplot([i for i in a])
+ax[1, 0].plot([i for i in range(10)],diccionario.values())
+ax[0,1].set_yticks(sorted(list(diccionario.values())))
+
 plt.show()
