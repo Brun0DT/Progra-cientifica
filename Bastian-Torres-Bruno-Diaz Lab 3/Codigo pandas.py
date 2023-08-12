@@ -8,17 +8,18 @@ data=pd.read_csv("UNI_CORR_500_01.txt", skiprows=3,sep="\t") #names= cuando la t
 
 
 #Velocidad primer txt
-def apply_value(datax):
+def Obtener_velocidad(datax):
     return (((datax["X"].diff(periods=1))**2+(datax["Y"].diff(periods=1))**2)**(1/2))/(1/25)
 
-Dataframe_velocidades = data.groupby("# PersID").apply(apply_value) #dataframe_velocidad se convirtio en una serie
+Dataframe_velocidades = data.groupby("# PersID").apply(Obtener_velocidad) #dataframe_velocidad se convirtio en una serie
+
 data["Velocidad"]=Dataframe_velocidades.values #agrego la serie que tiene propiedad index y value al dataframe original
 #en este caso values contiene un total de las filas de datos
 data=data.dropna(subset=['Velocidad']) #elimino valores none
-Dataframe_velocidades = data.groupby("# PersID").apply(apply_value)# se crea una serie donde se agrupa por persona y se le agregan los valores de la funcion 
+Dataframe_velocidades = data.groupby("# PersID").apply(Obtener_velocidad)# se crea una serie donde se agrupa por persona y se le agregan los valores de la funcion 
 #cada id persona contienen una cantidad de velocidades equivales a los frames donde estuvo
 
-#obtencion de grafico cajas y bigotes
+#obtencion de grafico cajas y bigotes primeras 10 personas del primer experimento
 fig, ax = plt.subplots()
 ax.boxplot([data[(data["# PersID"]==i)]["Velocidad"]  for i in range(1,11)])
 ax.set_xlabel('Personas')
@@ -39,23 +40,32 @@ print("\n")
 
 
 #velocidad segundo txt
-data=pd.read_csv("UNI_CORR_500_06.txt", skiprows=3,sep="\t") #names= cuando la tabla no tiene un encabezado 
-def apply_value(datax):
+data=pd.read_csv("UNI_CORR_500_06.txt", skiprows=3,sep="\t") #names= cuando la tabla no tiene un encabezado
+
+def obtener_velocidad(datax):
     return (((datax["X"].diff(periods=1))**2+(datax["Y"].diff(periods=1))**2)**(1/2))/(1/25)
-Dataframe_velocidades= data.groupby("# PersID").apply(apply_value)
-data["Velocidad"]=Dataframe_velocidades.values
+
+Dataframe_velocidades= data.groupby("# PersID").apply(obtener_velocidad) #se agrupa y se asigna el valor de la velocidad por cada frame
+#individual
+data["Velocidad"]=Dataframe_velocidades.values #se asigna la velocidad de cada linea de coordenada al dataset original
 data=data.dropna(subset=['Velocidad']) #paso importante de otra forma el boxplot no arroja imagen
-Dataframe_velocidades = data.groupby("# PersID").apply(apply_value)
-tabla_experimento2=Dataframe_velocidades.groupby("# PersID").agg(np.mean)
-print("Promedio experimento 1: ",tabla_experimento2.mean())
-print("Varianza experimento 1: ",tabla_experimento2.var())
-#grafico cajas y bigotes experimento 6
+tabla_experimento2=Dataframe_velocidades.groupby("# PersID").agg(np.mean)#se obtiene una seria que almacena la velocidad de cada
+#persona en promedio
+
+#obtencion de promedio y varianza
+print("Promedio experimento 6: ",tabla_experimento2.mean())
+print("Varianza experimento 6: ",tabla_experimento2.var())
+
+
+#grafico cajas y bigotes experimento 6 primeras 10 personas
+
 fig, ax = plt.subplots()
 ax.boxplot([data[(data["# PersID"]==i)]["Velocidad"]  for i in range(1,11)])
 ax.set_xlabel('Personas')
 ax.set_ylabel('Velocidad')
 ax.set_title('Boxplot por persona experimento 06', loc='center')
 
+#grafico cajas y bigotes de personas que ya estan en la cola, 250 al 269
 fig, ax = plt.subplots()
 ax.boxplot([data[(data["# PersID"]==i)]["Velocidad"]  for i in range(250,270)])
 ax.set_xlabel('Personas')
