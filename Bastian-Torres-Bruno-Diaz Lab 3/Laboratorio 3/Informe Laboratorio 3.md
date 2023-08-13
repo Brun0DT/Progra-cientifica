@@ -58,10 +58,11 @@ En el desarrollo de este laboratorio, se hará uso de diversos elementos esencia
 *Ilustracion 1: Dimensiones paso peatonal*
 </center> 
 
-Es importante resaltar que cada observación contenida en el dataset abarca no solo las coordenadas en los ejes X, Y y Z, sino que también incorpora datos fundamentales como el ID de la persona enfocada y el número de Frame de la cámara correspondiente lo cual nos servira para poder obtener el calculo de la velocidad cuando la persona avanza entre los frames. Esta combinación de información brinda una visión completa de las posiciones de las personas en relación con su identificación y el momento de captura. 
-Para el procedimiento de este laboratorio se realizarán varias etapas cruciales. En primer lugar, emplearemos la plataforma Visual Studio Code junto con el lenguaje de programación Python seguido de la librería Pandas para cargar los archivos. Una vez completado el proceso de carga extraeremos las coordenadas X e Y acompañadas de el id y frame de la persona, transformando toda esta informacion en un dataframe, para que luego sea agrupado por el id de cada persona y asi proceder a su graficacion.
+Es importante resaltar que cada observación contenida en el dataset abarca no solo las coordenadas en los ejes X, Y y Z, sino que también incorpora datos fundamentales como el ID de la persona enfocada y el número de Frame de la cámara correspondiente lo cual nos servirá para poder obtener el cálculo de la velocidad cuando la persona avanza entre los frames. Esta combinación de información brinda una visión completa de las posiciones de las personas en relación con su identificación y el momento de captura. 
+Para el procedimiento de este laboratorio se realizarán varias etapas cruciales. En primer lugar, emplearemos la plataforma Visual Studio Code junto con el lenguaje de programación Python seguido de la librería Pandas para cargar los archivos. Una vez completado el proceso de carga extraeremos las coordenadas X e Y acompañadas de el id y frame de la persona, transformando toda esta información en un dataframe, para que luego sea agrupado por el id de cada persona y así proceder a su graficacion.
 
- A continuación, se desarrollará un algoritmo el cual procese estos datos con el fin calcular la distancia entre las coordenadas en cuadros de tiempo consecutivos. Con esta información, se determinarán las velocidades individuales de las personas medida en metros por segundos lo cual consiste en calcular el desplazamiento del punto x e y a travez de los frames, permitiendo analizar y comparar sus comportamientos de evacuación. La representacion de las formas de calculo se representa a continuacion.
+A continuación, se desarrollará un algoritmo el cual procese estos datos con el fin calcular la distancia entre las coordenadas en cuadros de tiempo consecutivos. Con esta información, se determinarán las velocidades individuales de las personas medida en metros por segundos lo cual consiste en calcular el desplazamiento del punto x e y a través de los frames, permitiendo analizar y comparar sus comportamientos de evacuación. La representación de las formas de cálculo se representa a continuación.
+
 
 <center>
 <img src="images/ecuaciones.png" width="250">
@@ -70,10 +71,12 @@ Para el procedimiento de este laboratorio se realizarán varias etapas cruciales
 
 </center>
 
+Cabe destacar que el tiempo en segundos correspondera a 1/25, siendo 25 la cantidad de FPS que se indican en el experimento, lo cual afectara a la velocidad que presente la persona por las variacion en su posicion x o y, lo cual es evaluado a medida que avance cada frame, es decir por cada frame que avance la persona la distancia recorrida se dividira por 1/25 segundos.
+
 Para el análisis de estos comportamientos se utilizarán gráficos de histograma y gráficos de cajas y bigotes, lo que proporcionará información clave para la toma de decisiones en la planificación urbana y la optimización de la movilidad peatonal. En resumen, este laboratorio fusiona el poder de la programación científica con la visualización de datos para obtener conocimientos profundos sobre la frecuencia peatonal y su distribución en un entorno específico.
 
 En resumen, la secuencia de pasos sería la siguiente:
-1. Cargar los archivos "UNI_CORR_500_01.txt" y "UNI_CORR_500_06.txt" utilizando la librería Pandas en el entorno de Visual Studio Code para su acceso y manipulación traspasando la informacion a un elemento dataframe.
+1. Cargar los archivos "UNI_CORR_500_01.txt" y "UNI_CORR_500_06.txt" utilizando la librería Pandas en el entorno de Visual Studio Code para su acceso y manipulación traspasando la información a un elemento dataframe.
 2. Extraer las coordenadas X e Y de cada observación registrada en el conjunto de datos y calcular la distancia entre las coordenadas de cada persona en cuadros de tiempo consecutivos.
 3. Calcular la velocidad individual de cada persona dividiendo la distancia recorrida entre coordenadas por el tiempo transcurrido en ese intervalo, siendo agrupado y almacenado en una serie de datos.
 4. Generar visualizaciones gráficas como gráficos de histograma y gráficos de cajas y bigotes. Estas representaciones visuales facilitarán la interpretación y comprensión intuitiva de los resultados obtenidos.
@@ -133,7 +136,7 @@ Por otro lado, también se encuentra un boxplot, el cual grafica las primeras 10
 
 Avanzando con la experimentación 6, se realiza una variación en el tamaño de las puertas donde la primera presenta un tamaño de 5 metros y la segunda de 4 metros, manteniendo el flujo de personas desde el lado derecho al izquierdo. Cabe destacar que la cantidad de personas en esta experimentación corresponde a 913.
 
-A continuación se observa el Histograma correspondiente a la experimentación 6, en este grafico se observa un sesgo hacia la derecha, ya que la mayoría de los datos se encuentran concentrados en el lado izquierdo, disminuyendo hasta un mínimo de aproximado de 0.4 metros por segundos y llegando hasta una velocidad máxima de 1.6 metros por segundos.
+A continuación, se observa el Histograma correspondiente a la experimentación 6, en este grafico se observa un sesgo hacia la derecha, ya que la mayoría de los datos se encuentran concentrados en el lado izquierdo, disminuyendo hasta un mínimo de aproximado de 0.4 metros por segundos y llegando hasta una velocidad máxima de 1.6 metros por segundos.
 
 <center>
 <img src="images/HISTlab3.png" width="400">
@@ -152,7 +155,7 @@ Por otro lado, también se obtuvo las estadísticas correspondientes al promedio
 *Tabla 3: Estadisticas experimento 6*
 </center>
 
-Continuando con el grafico boxplot, perteneciente a las primeras 10 personas registradas en el experimento, se logra observar cómo los valores promedios que estos nos entregan son mucho mayor al promedio general de la velocidad registrada, lo cual sirve para inferir que inicialmente cuando el pasillo se encuentra vacío, les era más fácil y rápido acceder y pasar a través de él, a diferencia de las personas posteriores.
+Continuando con el grafico boxplot, perteneciente a las primeras 10 personas registradas en el experimento, se logra observar cómo los valores promedios que estos nos entregan son mucho mayores al promedio general de la velocidad registrada, lo cual sirve para inferir que inicialmente cuando el pasillo se encuentra vacío, les era más fácil y rápido acceder y pasar a través de él, a diferencia de las personas posteriores.
 
 <center>
 <img src="images/boxplotexp6.png" width="400">
@@ -176,7 +179,7 @@ Sin embargo, en el sexto experimento, con una población más grande y variacion
 Además, se identificó que las primeras personas tenían velocidades relativamente altas, probablemente debido a la ausencia inicial de obstáculos y a una mayor capacidad para moverse libremente. A medida que más personas ingresaban al pasillo, las velocidades tendían a reducirse, reflejando un efecto de congestión o restricción del espacio.
 Estos hallazgos resaltan la importancia de considerar factores como la densidad de personas y el diseño del entorno al analizar las velocidades de desplazamiento. Además, demuestran cómo herramientas visuales como histogramas y boxplots pueden capturar patrones y tendencias que aportan una comprensión más rica y matizada de los resultados. En última instancia, este análisis proporciona información valiosa para la planificación y el diseño de espacios donde el flujo de personas es un factor crítico.
 
-Finalmente podemos concluir que se lograron tanto los objetivos específicos como el general, debido a que se pudo realizar un análisis de patrones de concentración de personas en un entorno monitoreado a través del desarrollo de un algoritmo el cual permitió calcular la distancia entre las coordenadas de cada persona en cuadros de tiempo consecutivos, con ello se logró transformar estas distancias a velocidades y finalizar se pudo realizar un análisis competente mediante la visualización de las velocidades a través de gráficos de histograma y gráficos de cajas y bigotes.
+Finalmente podemos concluir que se logró tanto el objetivo general como los objetivos específicos, debido a que se pudo realizar un análisis de patrones de concentración de personas en un entorno monitoreado a través del desarrollo de un algoritmo el cual permitió calcular la distancia entre las coordenadas de cada persona en cuadros de tiempo consecutivos, con ello se logró transformar estas distancias a velocidades y finalmente se pudo realizar un análisis competente mediante la visualización de las velocidades a través de gráficos de histograma y gráficos de cajas y bigotes.
 
 ## 6. Referencias
 OpenAI. (2021). GPT-3.5 [Modelo de lenguaje AI]. Recuperado de https://openai.com/gpt-3.5
