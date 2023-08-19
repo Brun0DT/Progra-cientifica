@@ -62,10 +62,10 @@ En el desarrollo de este laboratorio, se hará uso de diversos elementos esencia
 <center>
 <img src="images/Dimensiones.jpeg" width="400">
 
-*Ilustración 1: Dimensiones paso peatonal*
+*Ilustracion 1: Dimensiones paso peatonal*
 </center> 
 
-Es importante resaltar que cada observación contenida en el dataset abarca no solo las coordenadas en los ejes X, Y y Z, sino que también incorpora datos fundamentales como el ID de la persona enfocada y el número de frames de la cámara correspondiente lo cual nos servirá para poder obtener el cálculo de la velocidad cuando la persona avanza entre los frames. Esta combinación de información brinda una visión completa de las posiciones de las personas en relación con su identificación y el momento de captura. 
+Es importante resaltar que cada observación contenida en el dataset abarca no solo las coordenadas en los ejes X, Y y Z, sino que también incorpora datos fundamentales como el ID de la persona enfocada y el número de Frame de la cámara correspondiente lo cual nos servirá para poder obtener el cálculo de la velocidad cuando la persona avanza entre los frames. Esta combinación de información brinda una visión completa de las posiciones de las personas en relación con su identificación y el momento de captura. 
 Para el procedimiento de este laboratorio se realizarán varias etapas cruciales. 
 
 En primer lugar, emplearemos la plataforma Visual Studio Code junto con el lenguaje de programación Python seguido de las librerías Numpy, Pandas, Scipy, matplotlib y Streamlit para la futura cargar y manipulación de los datos. Una vez completado el proceso de carga extraeremos las coordenadas X e Y acompañadas de el id y frame de la persona, transformando toda esta información en un dataframe, para que luego sea agrupado por el id de cada persona y así proceder a su visualización.
@@ -76,16 +76,16 @@ A continuación, se desarrollará un algoritmo el cual procese estos datos con e
 <center>
 <img src="images/ecuaciones.png" width="250">
 
-*Ilustración 2: Ecuaciones*
+*Ilustracion 1: Ecuaciones*
 
 </center>
 
-Seguido de esto, se definirá una función la cual permitirá encontrar los vecinos más cercanos de un peatón en función a un radio de 3 metros y con ello, la distancia que tenga con estos en un frame determinado. Luego, se hará utilización de esta función llendo frame por frame y peatón por peatón encontrado en cada frame, calculando y agregando a la data_frame la distancia promedio (sk) que mantiene el peatón seleccionado con respecto a los demás peatones ubicados en el mismo frame. A continuación, se visualiza de mejor manera el cómo funciona sk.
+Seguido de esto, se definirá una función la cual permitirá encontrar los vecinos más cercanos de un peaton en función a un radio de 3 metros y con ello, la distancia que tenga con estos en un frame determinado. Luego, se hará utilización de esta función llendo frame por frame y peaton por peaton encontrado en cada frame, calculando y agregando al data_frame la distancia promedio (sk) que mantiene el peaton seleccionado con respecto a los demas peatones ubicados en el mismo frame. A continuación se visualiza de mejor manera el como funciona sk.
 
 <center>
 <img src="images/sk.png" width="250">
 
-*Ilustración 3: Fórmula sk*
+*Ilustracion 2: Fórmula sk*
 
 </center>
 
@@ -114,11 +114,11 @@ Para el análisis de resultados obtenidos se creó el archivo "Código sk.py" el
 |-----------------------|----------------------------|-------------------------|
 | Programa Normal (Codigo pandas.py) |      186443.180      |          5.25        |
 
-Tabla 1: Tiempos de ejecucion
+*Tabla 1: Tiempos de ejecucion*
 </center>
 
 
-A continuación, se mostrarán los gráficos correspondientes a un histograma, boxplot y grafico de dispersión, para el análisis en la experimentación.
+A continuación, se mostrarán los gráficos correspondientes a un histograma, boxplot y grafico de dispersion, para el análisis en la experimentacion
 
 Las condiciones que presenta son un tamaño de puerta de entrada de 1 metro y de salida de 5 metros, donde las personas entran de derecha a izquierda y se van separando entre ellas debido a que una persona se encuentra detenida en la mitad del camino, con un tamaño de población de 148 personas.
 
@@ -126,9 +126,9 @@ En cuando al histograma, el cual presenta en el eje x las velocidades y en el ej
 
 
 <center>
-<img src="images/H4.png" width="400">
+<img src="images/HISTlab3-2.png" width="400">
 
-Gráfico 1: Histograma experimento 01
+*Grafico 1: Histograma*
 
 </center>
 
@@ -139,31 +139,45 @@ El primer experimento además presenta un promedio y una varianza de velocidad e
 |--------------------|-------------------------|
 |        1.505       |          0.0487         |
 
-Tabla 2: Estadisticas experimento 1
+*Tabla 2: Estadisticas Velocidad*
 </center>
 
 Por otro lado, también se encuentra un boxplot, el cual grafica las primeras 10 personas, permitiendo analizar el comportamiento individual de estas. En el grafico se logran observan una gran cantidad de valores atípicos en la velocidad de estos, siendo el valor más alto registrado con un total de 3.5 metros por segundo, el cual podría ser despreciable al corresponder a solo un registro, en cuando a las medianas, se puede concluir que en general se encuentra cercana al centro de la caja a excepción de 2 o 3 personas, dando indicios de simetría en los resultados para cada una de ellas.
 
 <center>
-<img src="images/S4.png" width="400">
+<img src="images/boxplotexp1.png" width="400">
 
-Gráfico 2: Scatter Plot experimento 01
+*Grafico 2: Boxplot*
 
 </center>
 
 El scatter plot en cuestión muestra gráficamente la relación entre dos variables: la velocidad de desplazamiento de individuos y el promedio de distancias que los separa de otras personas en un radio de 3 metros alrededor de ellos. La velocidad se representa en el eje vertical (eje Y) y el promedio de distancias en el eje horizontal (eje X). Cada punto en el gráfico representa a un individuo específico y su posición en el plano se determina por los valores de velocidad y promedio de distancias correspondientes.
 
-Al examinar detenidamente el scatter plot, se revela una interesante dinámica entre la distancia y la velocidad de las personas en estudio. La tendencia observada muestra cómo a medida que aumenta la distancia entre individuos, se produce una variación más amplia en las velocidades a las que se desplazan. Este patrón insinúa una asociación crucial entre la distancia interpersonal y la libertad de elección en términos de velocidad.
+Al examinar detenidamente, se revela una interesante dinámica entre la distancia y la velocidad de las personas en estudio. La tendencia observada muestra cómo a medida que aumenta la distancia entre individuos, se produce una variación más amplia en las velocidades a las que se desplazan. Este patrón insinúa una asociación crucial entre la distancia interpersonal y la libertad de elección en términos de velocidad.
 
 Cuando se analiza el comportamiento en función del promedio de distancias de una persona con las más cercanas (sk), específicamente a partir de un sk de 1.5 hasta 2.5 metros, emerge una pauta llamativa. Aquí es donde se observa una dispersión más significativa en las velocidades, que abarca un rango amplio, desde 0.5 hasta 3.5 metros por segundo. Este fenómeno puede interpretarse como un reflejo de la diversidad de preferencias y estilos de movimiento de las personas cuando se les brinda un mayor espacio para maniobrar.
 
 El hecho de que los puntos se diseminen en un rango amplio de velocidades, especialmente a distancias más grandes, sugiere que las personas tienen una mayor flexibilidad para adaptar su velocidad a su comodidad y necesidades individuales. Este fenómeno podría estar influenciado por la percepción de espacio y seguridad que brinda una mayor distancia entre personas.
 
-Cabe mencionar que, dentro de esta distribución de velocidades, se identifican algunos valores atípicos que merecen atención especial. Uno de estos valores atípicos es el punto que presenta una velocidad superior a 4 metros por segundo. Este valor excepcional podría representar una situación inusual o la manifestación de un comportamiento particularmente rápido y enérgico en un contexto específico.
+Cabe mencionar que dentro de esta distribución de velocidades, se identifican algunos valores atípicos que merecen atención especial. Uno de estos valores atípicos es el punto que presenta una velocidad superior a 4 metros por segundo. Este valor excepcional podría representar una situación inusual o la manifestación de un comportamiento particularmente rápido y enérgico en un contexto específico.
+<center>
+<img src="images/S4.png" width="400">
 
+*Grafico 3: Grafico de dispersion*
+
+</center>
+En cuanto al promedio y varianza del calculo para el sk se obtiene un valor de 1.9 y 0.34 respectivamente, indicando que en este experimento en promedio las personas estan a 1.9 metros separadas de las otras.
+<center>
+
+|       Promedio     |         Varianza        |
+|--------------------|-------------------------|
+|        1.900       |          0.341          |
+
+*Tabla 2: Estadisticas SK*
+</center>
 ## 5. Conclusiones
 
-Como conclusión, tras un análisis minucioso de los resultados, se han identificado patrones y tendencias significativas en las velocidades observadas en diversos experimentos. El histograma reflejó una distribución similar a una campana de Gauss, indicando que la mayoría de las personas mantuvieron una velocidad constante en torno a 1.5 metros por segundo en ese contexto. Esto sugiere que, a pesar de las fluctuaciones, las personas tendieron a mantener una velocidad estable.
+Como conclusion, tras un análisis minucioso de los resultados, se han identificado patrones y tendencias significativas en las velocidades observadas en diversos experimentos. El histograma reflejó una distribución similar a una campana de Gauss, indicando que la mayoría de las personas mantuvieron una velocidad constante en torno a 1.5 metros por segundo en ese contexto. Esto sugiere que, a pesar de las fluctuaciones, las personas tendieron a mantener una velocidad estable.
 
 Estas observaciones se confirmaron en el gráfico de dispersión, donde la mayoría de las personas se agruparon alrededor de la velocidad de 1.5 metros por segundo. Aquí, se notó una proporción similar de individuos que aumentaron o disminuyeron su velocidad. Además, la concentración de personas se destacó en el rango de 1.5 a 2.5 metros de distancia. Este hallazgo indica que generalmente las personas preferían mantener un espacio personal suficiente entre ellas al ajustar su velocidad, evitando acercamientos no deseados.
 
