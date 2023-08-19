@@ -175,6 +175,7 @@ En cuanto al promedio y varianza del calculo para el sk se obtiene un valor de 1
 
 *Tabla 2: Estadisticas SK*
 </center>
+
 ## 5. Conclusiones
 
 Como conclusion, tras un análisis minucioso de los resultados, se han identificado patrones y tendencias significativas en las velocidades observadas en diversos experimentos. El histograma reflejó una distribución similar a una campana de Gauss, indicando que la mayoría de las personas mantuvieron una velocidad constante en torno a 1.5 metros por segundo en ese contexto. Esto sugiere que, a pesar de las fluctuaciones, las personas tendieron a mantener una velocidad estable.
