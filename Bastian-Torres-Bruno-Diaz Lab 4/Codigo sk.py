@@ -58,8 +58,10 @@ for frame in data["Frame"]:
     Encontrar_coordenada_vecina()
 
 #hacer scarter plot sf en y velocidad en el y
-print(data["sk"].mean())
-
+print("Promedio sk:",data["sk"].mean())
+print("Desviacion sk:",data["sk"].std())
+print("Promedio Velocidad:",data["Velocidad"].mean())
+print("Desviacion Velocidad:",data["Velocidad"].std())
 #--------------------------------------------------------------------------------------------------------------------
 
 tabla_experimento1=Dataframe_velocidades.groupby("# PersID").agg(np.mean)
@@ -81,7 +83,17 @@ plt.title('Scatter Plot entre sk y Velocidad')
 plt.xlabel('sk')
 plt.ylabel('Velocidad')
 plt.grid(True)
+
+#obtencion de grafico cajas y bigotes primeras 10 personas del primer experimento
+fig, ax = plt.subplots()
+ax.boxplot([data[(data["# PersID"]==i)]["Velocidad"]  for i in range(1,11)])
+ax.set_xlabel('Personas')
+ax.set_ylabel('Velocidad')
+ax.set_title('Boxplot por persona experimento 01', loc='center')
+
+
 fin_memoria = psutil.virtual_memory().used;           fin_tiempo = time.time()
+plt.show()
 plt.show()
 plt.show()
 tiempo_transcurrido = fin_tiempo - tiempo_inicio
