@@ -1,6 +1,0 @@
-Estudiante	Materia	Puntuacion
-Ana	Matemáticas	85
-Juan	Historia	92
-María	Matemáticas	78
-Carlos	Historia	88
-Laura	Matemáticas	90

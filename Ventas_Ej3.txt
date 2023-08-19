@@ -1,7 +1,0 @@
-Vendedor	Producto	Venta
-Ana	A	150
-Juan	B	200
-Ana	A	120
-Carlos	C	300
-Juan	B	180
-Carlos	C	250

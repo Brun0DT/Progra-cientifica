@@ -1,4 +1,0 @@
-,Nombre,Edad,Puntuación
-7,Miguel,29,92
-9,David,30,89
-17,Patricia,29,80

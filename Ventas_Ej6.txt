@@ -1,5 +1,0 @@
-Fecha	Producto	Cantidad	PrecioUnitario
-2023-01-01	A	10	5
-2023-01-02	B	15	8
-2023-01-01	A	8	6
-2023-01-02	B	12	10
