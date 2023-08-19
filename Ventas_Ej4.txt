@@ -1,0 +1,5 @@
+Fecha	Producto	Region	Venta
+2023-01-01	A	Norte	150
+2023-01-01	B	Sur	200
+2023-01-02	A	Norte	120
+2023-01-02	C	Sur	10

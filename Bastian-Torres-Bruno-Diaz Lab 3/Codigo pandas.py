@@ -15,6 +15,7 @@ Dataframe_velocidades = data.groupby("# PersID").apply(Obtener_velocidad) #dataf
 
 data["Velocidad"]=Dataframe_velocidades.values #agrego la serie que tiene propiedad index y value al dataframe original
 #en este caso values contiene un total de las filas de datos
+print(data)
 data=data.dropna(subset=['Velocidad']) #elimino valores none
 Dataframe_velocidades = data.groupby("# PersID").apply(Obtener_velocidad)# se crea una serie donde se agrupa por persona y se le agregan los valores de la funcion 
 #cada id persona contienen una cantidad de velocidades equivales a los frames donde estuvo

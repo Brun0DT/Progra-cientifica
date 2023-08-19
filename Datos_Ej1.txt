@@ -1,0 +1,11 @@
+Nombre	Edad	Genero
+Ana	25	Femenino
+Juan	30	Masculino
+María	22	Femenino
+Carlos	28	Masculino
+Valentina	34	Femenino
+Felipe	18	Masculino
+Samuel	40	Masculino
+Jorge	25	Masculino
+Peter	55	Masculino
+Lucia	25	Femenino
