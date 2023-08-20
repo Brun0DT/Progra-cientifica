@@ -76,7 +76,7 @@ A continuación, se desarrollará un algoritmo el cual procese estos datos con e
 <center>
 <img src="images/ecuaciones.png" width="250">
 
-*Ilustracion 1: Ecuaciones*
+*Ilustracion 2: Ecuaciones*
 
 </center>
 
@@ -85,7 +85,7 @@ Seguido de esto, se definirá una función la cual permitirá encontrar los veci
 <center>
 <img src="images/sk.png" width="250">
 
-*Ilustracion 2: Fórmula sk*
+*Ilustracion 3: Fórmula sk*
 
 </center>
 
@@ -166,7 +166,7 @@ Cabe mencionar que dentro de esta distribución de velocidades, se identifican a
 *Grafico 3: Grafico de dispersion*
 
 </center>
-En cuanto al promedio y varianza del calculo para el sk se obtiene un valor de 1.9 y 0.34 respectivamente, indicando que en este experimento en promedio las personas estan a 1.9 metros separadas de las otras.
+En cuanto al promedio y varianza para el sk se obtiene un valor de 1.9 y 0.34 respectivamente, indicando que en este experimento en promedio las personas estan a 1.9 metros separadas de las otras.
 <center>
 
 |       Promedio     |         Varianza        |
@@ -174,6 +174,15 @@ En cuanto al promedio y varianza del calculo para el sk se obtiene un valor de 1
 |        1.900       |          0.341          |
 
 *Tabla 2: Estadisticas SK*
+</center>
+
+Finalmente, se observa una ilustracion la cual corresponde a una captura del paso de peatones, evidenciandose las distancias que presentan las personas entre ellas, concluyendo que a pesar de la existencia de una gran separacion, mantenian su velocidad.
+
+<center>
+<img src="images/imagen_peatones.png" width="400">
+
+*Ilustracion 4: Paso peatonal*
+
 </center>
 
 ## 5. Conclusiones
